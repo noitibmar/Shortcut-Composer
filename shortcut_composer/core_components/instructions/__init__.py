@@ -11,6 +11,7 @@ press, release, or in a loop while the key is pressed.
 from .layer_hide import ToggleLayerVisibility, ToggleVisibilityAbove
 from .set_brush_strategy import SetBrush, SetBrushOnNonPaintable
 from .undo import UndoOnPress
+from .anim import *
 from .togglers import (
     TemporaryOff,
     TemporaryOn,

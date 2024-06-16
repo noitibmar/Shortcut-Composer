@@ -70,6 +70,11 @@
         <activationFlags>1</activationFlags>
         <icon>addduplicateframe</icon>
         </Action>
+		
+		<Action name="Roll timeline">
+        <activationFlags>1</activationFlags>
+		<icon>dynabrush</icon>
+        </Action>
 
         <Action name="Scroll brush size or opacity">
         <activationFlags>1</activationFlags>

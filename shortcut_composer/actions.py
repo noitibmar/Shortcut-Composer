@@ -140,6 +140,18 @@ def create_actions() -> list[templates.RawInstructions]: return [
         ),
     ),
 
+    # Roll timeline by sliding cursor horizontally
+    # quick tap to play animation
+    templates.CursorTracker(
+        name="Roll timeline",
+        instructions=[instructions.RollPlayAnim()],
+        horizontal_slider=Slider(
+            controller=controllers.TimeController(),
+            values=Range(0, INFINITY),
+        ),
+    ),
+
+
     # Scroll brush sizes by sliding the cursor horizontally or
     # brush opacity layers by sliding it vertically
     #
