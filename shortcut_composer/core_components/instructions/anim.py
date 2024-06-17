@@ -25,5 +25,14 @@ class RollPlayAnim(Instruction):
         if not self.active_node.node.hasKeyframeAtTime(curtime):
             Krita.trigger_action("previous_keyframe")
 
+class SetEndFrame(Instruction):
+    """
+    get currently active frame and set as animation endframe
+    """
+    def on_every_key_release(self) -> None:
+        self.document = Krita.get_active_document()
+        curtime = self.document.current_time
+        self.document.full_clip_range_end_time = curtime
 
-__all__ = ["RollPlayAnim"]
+
+__all__ = ["RollPlayAnim", "SetEndFrame"]

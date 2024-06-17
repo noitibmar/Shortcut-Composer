@@ -20,6 +20,10 @@ class KritaDocument(Protocol):
     def resolution(self) -> int: ...
     def currentTime(self) -> int: ...
     def setCurrentTime(self, time: int) -> None: ...
+    def fullClipRangeEndTime(self) -> int: ...
+    def setFullClipRangeEndTime(self, time: int) -> None: ...
+    def fullClipRangeStartTime(self) -> int: ...
+    def setFullClipRangeStartTime(self, time: int) -> None: ...
     def refreshProjection(self) -> None: ...
     def annotation(self, type: str) -> QByteArray: ...
     def annotationTypes(self) -> list[str]: ...
@@ -72,6 +76,26 @@ class Document:
     def current_time(self, time: int) -> None:
         """Set current time using frame number"""
         self.document.setCurrentTime(round(time))
+
+    @property
+    def full_clip_range_end_time(self) -> int:
+        """Settable property with this `Document`'s end frame number."""
+        return self.document.fullClipRangeEndTime()
+
+    @full_clip_range_end_time.setter
+    def full_clip_range_end_time(self, time: int) -> None:
+        """Set clip end time using frame number"""
+        self.document.setFullClipRangeEndTime(round(time))
+
+    @property
+    def full_clip_range_start_time(self) -> int:
+        """Settable property with this `Document`'s start frame number."""
+        return self.document.fullClipRangeStartTime()
+
+    @full_clip_range_start_time.setter
+    def full_clip_range_start_time(self, time: int) -> None:
+        """Set clip end time using frame number"""
+        self.document.setFullClipRangeStartTime(round(time))
 
     def get_top_nodes(self) -> list[Node]:
         """Return a list of `Nodes` without a parent."""

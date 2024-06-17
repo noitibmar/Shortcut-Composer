@@ -163,6 +163,11 @@
     <Actions category="Scripts">
         <text>Shortcut Composer: Utilities</text>
 
+		<Action name="Set Clip Length">
+		<activationFlags>1</activationFlags>
+		<icon>dropframe</icon>
+		</Action>
+
         <Action name="Configure Shortcut Composer">
         <activationFlags>0</activationFlags>
         <icon>configure</icon>

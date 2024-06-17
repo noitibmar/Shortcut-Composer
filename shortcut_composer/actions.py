@@ -76,6 +76,13 @@ def create_actions() -> list[templates.RawInstructions]: return [
         instructions=[instructions.ToggleVisibilityAbove()],
     ),
 
+    # Run the Set End Frame instruction
+    # Sets the clip length equal to the active frame
+    templates.RawInstructions(
+        name="Set Clip Length",
+        instructions=[instructions.SetEndFrame()],
+    ),
+
     # Cycle between painting opacity values from values_to_cycle list
     # After a long key press, go back to opacity of 100%
     templates.MultipleAssignment(
@@ -150,7 +157,6 @@ def create_actions() -> list[templates.RawInstructions]: return [
             values=Range(0, INFINITY),
         ),
     ),
-
 
     # Scroll brush sizes by sliding the cursor horizontally or
     # brush opacity layers by sliding it vertically
